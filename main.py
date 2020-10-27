@@ -1,7 +1,6 @@
 from selenium import webdriver
 from time import sleep
 from secrets import username, password
-from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.keys import Keys
 from datetime import date
 from datetime import timedelta

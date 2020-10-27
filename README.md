@@ -23,7 +23,7 @@ password = "<Your Password>"
 
 To run the code, move the project to your current directory (along with ```secrets.py```, open a new terminal and type:
 ```
-python gym.py
+python main.py
 ```
 
 ~Enjoy

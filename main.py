@@ -32,69 +32,60 @@ class gymBot():
         sleep(2)
 
     def search(self):
-        site = self.driver.find_element_by_xpath('//*[@id="SiteID"]/option[3]')
-        site.click()
+        self.driver.find_element_by_xpath('//*[@id="SiteID"]/option[3]').click()
 
         sleep(2)
 
-        activity = self.driver.find_element_by_xpath('//*[@id="Activity"]/option[3]')
-        activity.click()
+        self.driver.find_element_by_xpath('//*[@id="Activity"]/option[3]').click()
 
         sleep(2)
 
-        day = self.driver.find_element_by_xpath('//*[@id="SearchDate"]')
-        day.click()
+        day = self.driver.find_element_by_xpath('//*[@id="SearchDate"]').click()
 
         sleep(1)
 
         day.clear()
 
-        today = date.today()
-        today = today + timedelta(days=3)
-        today = today.strftime("%m/%d/%Y")
+        today = date.today() + timedelta(days=3)
 
-        day.send_keys(today)
+        day.send_keys(today.strftime("%m/%d/%Y"))
         day.send_keys(Keys.ENTER)
         day.click()
         day.send_keys(Keys.ENTER)
 
         sleep(2)        
 
-        time_start = self.driver.find_element_by_xpath('//*[@id="English_TimeFrom"]/option[2]')
-        time_start.click()
+        self.driver.find_element_by_xpath('//*[@id="English_TimeFrom"]/option[2]').click()
 
         sleep(2)
 
-        search = self.driver.find_element_by_xpath('//*[@id="SearchButtonDiv"]/input')
-        search.click()
+        self.driver.find_element_by_xpath('//*[@id="SearchButtonDiv"]/input').click()
 
         sleep(2)
 
     def checkout(self):
 
-        basket = self.driver.find_element_by_xpath('//*[@id="basketControl_1_2"]')
-        basket.click()
+        self.driver.find_element_by_xpath('//*[@id="basketControl_1_2"]').click()
 
         sleep(2)
 
-        tandc = self.driver.find_element_by_xpath('//*[@id="TermsAccepted"]')
-        tandc.click()
+        self.driver.find_element_by_xpath('//*[@id="TermsAccepted"]').click()
 
         sleep(2)
 
-        checkout = self.driver.find_element_by_xpath('//*[@id="CheckoutSubmit"]')
-        checkout.click()
+        self.driver.find_element_by_xpath('//*[@id="CheckoutSubmit"]').click()
 
         sleep(2)
 
-        confirm = self.driver.find_element_by_xpath('//*[@id="CentralRegion"]/div[2]/div[2]/div/div/p/a')
-        confirm.click()
+        self.driver.find_element_by_xpath('//*[@id="CentralRegion"]/div[2]/div[2]/div/div/p/a').click()
 
-bot = gymBot()
-bot.login()
-sleep(2)
-bot.search()
-        
+
+if __name__ == "__main__":
+    bot = gymBot()
+    bot.login()
+    sleep(2)
+    bot.search()
+    #bot.checkout()
 
 
 

@@ -39,9 +39,8 @@ class gymBot():
 
         sleep(2)
 
-        day = self.driver.find_element_by_xpath('//*[@id="SearchDate"]').click()
-
-        sleep(1)
+        day = self.driver.find_element_by_xpath('//*[@id="SearchDate"]')
+        day.click()
 
         day.clear()
 
